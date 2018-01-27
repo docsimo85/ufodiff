@@ -29,8 +29,8 @@ $text = trim($text);
 $text = strtolower($text);
  
 header("Content-Type: application/json");
-$json = curl_get_contents(json_decode("https://chainz.cryptoid.info/explorer/api.dws?q=summary"));
-$parameters = array('chat_id' => $chatId, "text" => json_encode($json));
+$json = curl_get_contents("https://chainz.cryptoid.info/explorer/api.dws?q=summary");
+$parameters = array('chat_id' => $chatId, "text" => $json);
 $parameters["method"] = "sendMessage";
  
 //$parameters["reply_markup"] = '{ "keyboard": [["uno", "due"], ["tre", "quattro"], ["cinque"]], "resize_keyboard": true, "one_time_keyboard": false}';
