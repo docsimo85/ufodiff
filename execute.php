@@ -29,7 +29,7 @@ $text = trim($text);
 $text = strtolower($text);
  
 header("Content-Type: application/json");
-$json = curl_get_contents("https://chainz.cryptoid.info/explorer/api.dws?q=summary");
+$json = curl_get_contents(json_decode("https://chainz.cryptoid.info/explorer/api.dws?q=summary"));
 $parameters = array('chat_id' => $chatId, "text" => json_encode($json));
 $parameters["method"] = "sendMessage";
  
