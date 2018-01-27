@@ -16,7 +16,7 @@ $text = isset($message['text']) ? $message['text'] : "";
 $text = trim($text);
 $text = strtolower($text);
 header("Content-Type: application/json");
-$parameters = array('chat_id' => $chatId, "text" => 'testo');
+$parameters = array('chat_id' => $chatId, "text" => file_get_contents('https://chainz.cryptoid.info/explorer/api.dws?q=summary'));
 $parameters["method"] = "sendMessage";
 $parameters["reply_markup"] = '{ "keyboard": [["uno", "due"], ["tre", "quattro"], ["cinque"]], "resize_keyboard": true, "one_time_keyboard": false}';
 echo json_encode($parameters);
