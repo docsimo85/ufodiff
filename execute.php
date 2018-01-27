@@ -4,6 +4,15 @@ $update = json_decode($content, true);
 if(!$update){
   exit;
 }
+function curl_get_contents($url) {
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_HEADER, 0);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_URL, $url);
+    $data = curl_exec($ch);
+    curl_close($ch);
+    return $data;
+}
 $message = isset($update['message']) ? $update['message'] : "";
 $json = file_get_contents('https://chainz.cryptoid.info/explorer/api.dws?q=summary');
 $messageId = isset($message['message_id']) ? $message['message_id'] : "";
