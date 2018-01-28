@@ -5,7 +5,7 @@ if(!$update){
   exit;
 }
 $message = isset($update['message']) ? $update['message'] : "";
-$json = file_get_contents('https://chainz.cryptoid.info/ufo/api.dws?q=getdifficulty');
+$json = array(file_get_contents('https://chainz.cryptoid.info/ufo/api.dws?q=getdifficulty', file_get_contents('https://chainz.cryptoid.info/ufo/api.dws?q=getblockcount'));
 $messageId = isset($message['message_id']) ? $message['message_id'] : "";
 $chatId = isset($message['chat']['id']) ? $message['chat']['id'] : "";
 $firstname = isset($message['chat']['first_name']) ? $message['chat']['first_name'] : "";
