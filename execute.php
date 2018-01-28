@@ -16,9 +16,10 @@ $date = isset($message['date']) ? $message['date'] : "";
 $text = isset($message['text']) ? $message['text'] : "";
 $text = trim($text);
 $text = strtolower($text);
+if($text = '!network'){
 header("Content-Type: application/json");
 $parameters = array('chat_id' => $chatId, "text" => 'UFO coin difficulty and block height:'.chr(10).'Current diff: '.json_decode($json,true).chr(10).'Current block: '.json_decode($json2,true)); 
 $parameters["method"] = "sendMessage";
 //$parameters["reply_markup"] = '{ "keyboard": [["uno", "due"], ["tre", "quattro"], ["cinque"]], "resize_keyboard": true, "one_time_keyboard": false}';
-if($text = '!network'){
-echo json_encode($parameters);}
+};
+echo json_encode($parameters);
