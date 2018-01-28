@@ -22,7 +22,7 @@ $parameters = array('chat_id' => $chatId, "text" => 'UFO coin difficulty and blo
 $parameters["method"] = "sendMessage";
 //$parameters["reply_markup"] = '{ "keyboard": [["uno", "due"], ["tre", "quattro"], ["cinque"]], "resize_keyboard": true, "one_time_keyboard": false}';
 }
-else if($text == '!help' || $text=='/help'){
+else if($text == '!help'){
 header("Content-Type: application/json");
 $parameters = array('chat_id' => $chatId, "text" => 'UFO coin difficulty and block height Bot'.chr(10).'Just type !network and bot will reply with difficulty and block height.'.chr(10).'If you find it useful donations are welcome :) UFO Address: BwJvr6HVnnsHRK7PArc72yrLXYEe52yAYp'); 
 $parameters["method"] = "sendMessage";
