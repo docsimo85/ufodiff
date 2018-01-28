@@ -5,7 +5,7 @@ if(!$update){
   exit;
 }
 $message = isset($update['message']) ? $update['message'] : "";
-$json = array(file_get_contents('https://chainz.cryptoid.info/ufo/api.dws?q=getdifficulty', file_get_contents('https://chainz.cryptoid.info/ufo/api.dws?q=getblockcount'));
+$json = file_get_contents('https://chainz.cryptoid.info/ufo/api.dws?q=getdifficulty');
 $messageId = isset($message['message_id']) ? $message['message_id'] : "";
 $chatId = isset($message['chat']['id']) ? $message['chat']['id'] : "";
 $firstname = isset($message['chat']['first_name']) ? $message['chat']['first_name'] : "";
@@ -18,5 +18,5 @@ $text = strtolower($text);
 header("Content-Type: application/json");
 $parameters = array('chat_id' => $chatId, "text" => json_decode($json,true));
 $parameters["method"] = "sendMessage";
-$parameters["reply_markup"] = '{ "keyboard": [["uno", "due"], ["tre", "quattro"], ["cinque"]], "resize_keyboard": true, "one_time_keyboard": false}';
-echo json_encode($parameters);
+$parameters["reply_markup"] = '{ "keyboard": [["Diff", "Block"], ["tre", "quattro"], ["cinque"]], "resize_keyboard": true, "one_time_keyboard": false}';
+echo json_encode('Current UFO difficulty: '.$parameters);
