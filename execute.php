@@ -17,7 +17,7 @@ $text = isset($message['text']) ? $message['text'] : "";
 $text = trim($text);
 $text = strtolower($text);
 header("Content-Type: application/json");
-$parameters = array('chat_id' => $chatId, "text" => 'Current diff:'.json_decode($json,true).\n.'Current block:'.json_decode($json2,true)); 
+$parameters = array('chat_id' => $chatId, "text" => 'Current diff:'.json_decode($json,true).'<br />'.'Current block:'.json_decode($json2,true)); 
 $parameters["method"] = "sendMessage";
 $parameters["reply_markup"] = '{ "keyboard": [["uno", "due"], ["tre", "quattro"], ["cinque"]], "resize_keyboard": true, "one_time_keyboard": false}';
 echo json_encode($parameters);
