@@ -26,10 +26,5 @@ else if($text = '!help'){
 header("Content-Type: application/json");
 $parameters = array('chat_id' => $chatId, "text" => 'UFO coin difficulty and block height Bot'.chr(10).'Just type !network and bot will reply with difficulty and block height.'.chr(10).'If you find it useful donations are welcome :) UFO Address: BwJvr6HVnnsHRK7PArc72yrLXYEe52yAYp'); 
 $parameters["method"] = "sendMessage";
-}
-else if($text = '/start'){
-header("Content-Type: application/json");
-$parameters = array('chat_id' => $chatId, "text" => 'UFO coin difficulty and block height Bot'.chr(10).'Just type !network and bot will reply with difficulty and block height.'.chr(10).'If you find it useful donations are welcome :) UFO Address: BwJvr6HVnnsHRK7PArc72yrLXYEe52yAYp'); 
-$parameters["method"] = "sendMessage";
 };
 echo json_encode($parameters);
