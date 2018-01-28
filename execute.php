@@ -1,5 +1,5 @@
 <?php
-$content = file_get_contents("php://input");
+$content = file_get_contents("php://input"); 
 $update = json_decode($content, true);
 if(!$update){
   exit;
@@ -19,4 +19,4 @@ header("Content-Type: application/json");
 $parameters = array('chat_id' => $chatId, "text" => json_decode($json,true));
 $parameters["method"] = "sendMessage";
 $parameters["reply_markup"] = '{ "keyboard": [["uno", "due"], ["tre", "quattro"], ["cinque"]], "resize_keyboard": true, "one_time_keyboard": false}';
-echo json_encode($parameters);
+echo json_encode('current diff:'.$parameters);
