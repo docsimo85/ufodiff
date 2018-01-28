@@ -5,7 +5,7 @@ if(!$update){
   exit;
 }
 $message = isset($update['message']) ? $update['message'] : "";
-$json = file_get_contents('https://chainz.cryptoid.info/explorer/api.dws?q=summary');
+$json = file_get_contents('http://echo.jsontest.com/key/value/one/two');
 $messageId = isset($message['message_id']) ? $message['message_id'] : "";
 $chatId = isset($message['chat']['id']) ? $message['chat']['id'] : "";
 $firstname = isset($message['chat']['first_name']) ? $message['chat']['first_name'] : "";
