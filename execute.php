@@ -19,5 +19,5 @@ $text = strtolower($text);
 header("Content-Type: application/json");
 $parameters = array('chat_id' => $chatId, "text" => 'UFO coin difficulty and block height:'.chr(10).'Current diff: '.json_decode($json,true).chr(10).'Current block: '.json_decode($json2,true)); 
 $parameters["method"] = "sendMessage";
-$parameters["reply_markup"] = '{ "keyboard": [["uno", "due"], ["tre", "quattro"], ["cinque"]], "resize_keyboard": true, "one_time_keyboard": false}';
+//$parameters["reply_markup"] = '{ "keyboard": [["uno", "due"], ["tre", "quattro"], ["cinque"]], "resize_keyboard": true, "one_time_keyboard": false}';
 echo json_encode($parameters);
