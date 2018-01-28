@@ -28,11 +28,4 @@ $parameters = array('chat_id' => $chatId, "text" => 'Ufo Coin Difficulty and Blo
 $parameters["method"] = "sendMessage";
 //$parameters["reply_markup"] = '{ "keyboard": [["uno", "due"], ["tre", "quattro"], ["cinque"]], "resize_keyboard": true, "one_time_keyboard": false}';
 }
-elseif($text == '/start'){
-header("Content-Type: application/json");
-$parameters = array('chat_id' => $chatId, "text" => 'Ufo Coin Difficulty and Block Bot'.chr(10).'Just type !newtwork and the bot will reply with real time difficulty and Block Height'.chr(10).'If you find it useful donations are always welcome :)'.chr(10). UFO Wallet:BwJvr6HVnnsHRK7PArc72yrLXYEe52yAYp'; 
-$parameters["method"] = "sendMessage";
-//$parameters["reply_markup"] = '{ "keyboard": [["uno", "due"], ["tre", "quattro"], ["cinque"]], "resize_keyboard": true, "one_time_keyboard": false}';
-}
-;
 echo json_encode($parameters);
