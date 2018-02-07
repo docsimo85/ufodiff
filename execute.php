@@ -26,7 +26,8 @@ $parameters = array('chat_id' => $chatId, "text" =>
         'qui stampo la lista'
 );
 $parameters["method"] = "sendMessage";
-$parameters["reply_markup"] = '{ "keyboard": [["Aggiungi altro prodotto", "Termina inserimento"]], "resize_keyboard": true, "one_time_keyboard": false}';
+    $keyboard = ['inline_keyboard' => [[['text' =>  'myText', 'callback_data' => 'myCallbackText']]]];
+    $parameters["reply_markup"] = json_encode($keyboard, true);
 }
 else if($text == 'aiuto'){
 header("Content-Type: application/json");
