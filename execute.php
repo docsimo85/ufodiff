@@ -18,29 +18,33 @@ $date = isset($message['date']) ? $message['date'] : "";
 $text = isset($message['text']) ? $message['text'] : "";
 $text = trim($text);
 $text = strtolower($text);
-if($text == '!network'){
-header("Content-Type: application/json");
-$parameters = array('chat_id' => $chatId,
-    "text" =>
-        'UFO Coin Real Time Inf:'.chr(10).
-        'Current diff: '.json_decode($json,true).chr(10).
-        'Current block: '.json_decode($json2,true).chr(10).
-        'Current USD Value: '.json_decode($json3,true).chr(10).
-        'Circulating Coins: '.number_format(json_decode($json4,true)).chr(10).
-        'For info on this bot type !help'
-);
-$parameters["method"] = "sendMessage";
-//$parameters["reply_markup"] = '{ "keyboard": [["uno", "due"], ["tre", "quattro"], ["cinque"]], "resize_keyboard": true, "one_time_keyboard": false}';
-}
-else if($text == '!help'){
+
+//COMANDI
+if($text == 'lista'){
 header("Content-Type: application/json");
 $parameters = array('chat_id' => $chatId, "text" =>
-    'UFO Coin Info Bot'.chr(10).
-    'developed by @docsimo85'.chr(10).
-    'Just type !network and bot will reply with real time info about UFO Coin.'.chr(10).
-    'This bot does not require to be admin and it can be added in group'.chr(10).
-    'If you find it useful donations are welcome :) UFO Address: BwJvr6HVnnsHRK7PArc72yrLXYEe52yAYp');
+        'qui stampo la lista'
+);
 $parameters["method"] = "sendMessage";
+$parameters["reply_markup"] = '{ "keyboard": ["Aggiungi altro prodotto", "Termina inserimento"], "resize_keyboard": true, "one_time_keyboard": true}';
+}
+else if($text == 'aiuto'){
+header("Content-Type: application/json");
+$parameters = array('chat_id' => $chatId, "text" =>
+        'lista comandi');
+$parameters["method"] = "sendMessage";
+}
+else if($text == 'aggiungi'){
+    header("Content-Type: application/json");
+    $parameters = array('chat_id' => $chatId, "text" =>
+        'comando per aggiungere prodotti');
+    $parameters["method"] = "sendMessage";
+}
+else if($text == 'rimuovi'){
+    header("Content-Type: application/json");
+    $parameters = array('chat_id' => $chatId, "text" =>
+        'comando per rimuovere prodotti');
+    $parameters["method"] = "sendMessage";
 }
 ;
 echo json_encode($parameters);
