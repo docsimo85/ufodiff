@@ -26,7 +26,7 @@ $parameters = array('chat_id' => $chatId, "text" =>
         'qui stampo la lista'
 );
 $parameters["method"] = "sendMessage";
-    $keyboard = ['inline_keyboard' => [[['text' =>  'myText', 'callback_data' => 'myCallbackText']]]];
+    $keyboard = ['inline_keyboard' => [[['text' =>  'Aiuto', 'callback_data' => 'aiuto']]]];
     $parameters["reply_markup"] = json_encode($keyboard, true);
 }
 else if($text == 'aiuto'){
