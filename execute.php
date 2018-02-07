@@ -22,7 +22,7 @@ if($text == '!network'){
 header("Content-Type: application/json");
 $parameters = array('chat_id' => $chatId,
     "text" =>
-        'UFO Coin Real Time Info:'.chr(10).
+        'UFO Coin Real Time Inf:'.chr(10).
         'Current diff: '.json_decode($json,true).chr(10).
         'Current block: '.json_decode($json2,true).chr(10).
         'Current USD Value: '.json_decode($json3,true).chr(10).
